@@ -88,3 +88,10 @@ def get_uber(source_address,destination_address):
         }
     r = session.post(url = 'https://www.uber.com/api/loadFEEstimates', headers = headers ,  json=body)
     pprint(r.json())
+    
+#Combine Lyft and Uber fare functions
+def combined(pickup, destination):
+    print("Lyft Fare Information")
+    get_lyft_fare(pickup,destination)
+    print("Uber Fare Inforamtion")
+    get_uber(pickup,destination)
